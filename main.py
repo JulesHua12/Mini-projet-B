@@ -26,6 +26,12 @@ import scipy
 #     rectangles_numpy,  erreur_rect_numpy,
 #     mesurer_temps_rect,
 # )
+# from integration_trapeze import (
+#     solution_analytique, calcul_erreur,
+#     trapeze_python, erreur_trapeze_python,
+#     trapeze_numpy,  erreur_trapeze_numpy,
+#     mesurer_temps_trapeze, demo_trapeze
+# )
 # from integration_trapezes import (
 #     trapezes_python,  erreur_trap_python,
 #     trapezes_numpy,   erreur_trap_numpy,
@@ -40,6 +46,13 @@ from Fonction.integration_rectangle import (
     mesurer_temps_rect,
     demo_rectangles, convergence_rectangles,
     A, B,
+)
+
+from Fonction.integration_trapeze import (
+    solution_analytique, calcul_erreur,
+    trapeze_python, erreur_trapeze_python,
+    trapeze_numpy,  erreur_trapeze_numpy,
+    mesurer_temps_trapeze, demo_trapeze
 )
 
 from Fonction.integration_simpson import (
@@ -87,7 +100,14 @@ demo_rectangles(A, B, P1, P2, P3, P4, N_BASE)
 print()
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  3. MÉTHODE DE SIMPSON — résultats pour N_BASE segments
+#  3. MÉTHODE DES RECTANGLES — résultats pour N_BASE segments
+# ══════════════════════════════════════════════════════════════════════════════
+
+demo_trapeze(A, B, N_BASE, P1, P2, P3, P4, NB_REPS)
+print()
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  4. MÉTHODE DE SIMPSON — résultats pour N_BASE segments
 # ══════════════════════════════════════════════════════════════════════════════
 
 print(f"── Méthode de Simpson  (n = {N_BASE}) ──────────────────────")
@@ -126,7 +146,7 @@ print()
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  4. CONVERGENCE EN FONCTION DE n
+#  5. CONVERGENCE EN FONCTION DE n
 # ══════════════════════════════════════════════════════════════════════════════
 
 erreurs_simp_py = [erreur_simpson_python(n, A, B, P1, P2, P3, P4)
@@ -162,7 +182,7 @@ print("Graphique sauvegardé : convergence_simpson.png")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  5. TEMPS D'EXÉCUTION EN FONCTION DE n
+#  6. TEMPS D'EXÉCUTION EN FONCTION DE n
 # ══════════════════════════════════════════════════════════════════════════════
 
 temps_simp_py = mesurer_temps_simpson(simpson_python, N_VALUES,
@@ -196,7 +216,7 @@ print("Graphique sauvegardé : temps_simpson.png")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  6. ILLUSTRATION DE LA MÉTHODE (optionnel — visualisation pédagogique)
+#  7. ILLUSTRATION DE LA MÉTHODE (optionnel — visualisation pédagogique)
 # ══════════════════════════════════════════════════════════════════════════════
 
 def tracer_simpson(a, b, n, p1, p2, p3, p4, ax, titre=""):

@@ -193,17 +193,9 @@ def mesurer_temps_trapeze(methode, a, b, n_values, p1, p2, p3, p4,
     return temps
 
 
-def demo_trapeze():
+def demo_trapeze(a, b, n, p1, p2, p3, p4,nb_repetitions):
     """Affiche les résultats de la méthode des rectangles pour n = 10."""
-    p1 = 1.0
-    p2 = 2.0
-    p3 = -3.0
-    p4 = 0.5
 
-    a = -2.0
-    b = 3.0
-
-    n = 10000
     i_exact  = solution_analytique(a, b, p1, p2, p3, p4)
     i_python = trapeze_python(a, b, n, p1, p2, p3, p4)
     i_numpy  = trapeze_numpy(a, b, n, p1, p2, p3, p4)
@@ -227,4 +219,14 @@ def demo_trapeze():
     print(f"  Accélération NumPy      : x{temps_python/temps_numpy:.1f}")
     print("=" * 55)
 
-demo_trapeze()
+
+p1 = 1.0
+p2 = 2.0
+p3 = -3.0
+p4 = 0.5
+a = -2.0
+b = 3.0
+n = 10000
+nb_repetitions = 50
+
+#demo_trapeze(a, b, n, p1, p2, p3, p4,nb_repetitions)
