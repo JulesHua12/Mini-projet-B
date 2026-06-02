@@ -43,7 +43,6 @@ from Fonction.integration_simpson import (
     mesurer_temps_simpson,
 )
 
-
 # ══════════════════════════════════════════════════════════════════════════════
 #  PARAMÈTRES — à modifier selon l'énoncé du cours
 # ══════════════════════════════════════════════════════════════════════════════
