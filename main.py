@@ -84,27 +84,6 @@ print()
 # ══════════════════════════════════════════════════════════════════════════════
 
 demo_rectangles(A, B, P1, P2, P3, P4, N_BASE)
-
-print(f"── Méthode des rectangles  (n = {N_BASE}) ──────────────────────")
-
-I_rect_py   = rectangles_python(A, B, N_BASE, P1, P2, P3, P4)
-err_rect_py = calcul_erreur(I_rect_py, I_exact)
-t_rect_py   = timeit.timeit(
-    lambda: rectangles_python(A, B, N_BASE, P1, P2, P3, P4),
-    number=NB_REPS
-) / NB_REPS
-
-I_rect_np   = rectangles_numpy(A, B, N_BASE, P1, P2, P3, P4)
-err_rect_np = calcul_erreur(I_rect_np, I_exact)
-t_rect_np   = timeit.timeit(
-    lambda: rectangles_numpy(A, B, N_BASE, P1, P2, P3, P4),
-    number=NB_REPS
-) / NB_REPS
-
-print(f"  Python  : I = {I_rect_py:.10f}  |  erreur = {err_rect_py:.2e}"
-      f"  |  temps = {t_rect_py*1e6:.2f} µs")
-print(f"  NumPy   : I = {I_rect_np:.10f}  |  erreur = {err_rect_np:.2e}"
-      f"  |  temps = {t_rect_np*1e6:.2f} µs")
 print()
 
 # ══════════════════════════════════════════════════════════════════════════════

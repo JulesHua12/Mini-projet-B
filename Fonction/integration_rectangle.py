@@ -137,8 +137,18 @@ def demo_rectangles(a, b, p1, p2, p3, p4, n=10):
     i_python = rectangles_python(a, b, n, p1, p2, p3, p4)
     i_numpy  = rectangles_numpy(a, b, n, p1, p2, p3, p4)
 
+    t_python = timeit.timeit(
+        lambda: rectangles_python(a, b, n, p1, p2, p3, p4),
+        number=200
+    ) / 200
+    t_numpy = timeit.timeit(
+        lambda: rectangles_numpy(a, b, n, p1, p2, p3, p4),
+        number=200
+    ) / 200
 
-
+    print(f"── Méthode des rectangles  (n = {n}) ──────────────────────")
+    print(f"  Python  : I = {i_python:.10f}  |  erreur = {calcul_erreur(i_python, i_exact):.2e}  |  temps = {t_python*1e6:.2f} µs")
+    print(f"  NumPy   : I = {i_numpy:.10f}  |  erreur = {calcul_erreur(i_numpy,  i_exact):.2e}  |  temps = {t_numpy*1e6:.2f} µs")
 
 # ---------------------------------------------------------------------------
 # Convergence
