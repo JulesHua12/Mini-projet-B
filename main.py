@@ -32,7 +32,7 @@ import timeit
 #     mesurer_temps_trap,
 # )
 
-from integration_simpson import (
+from Fonction.integration_simpson import (
     solution_analytique,
     calcul_erreur,
     f,
