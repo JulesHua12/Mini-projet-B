@@ -13,6 +13,7 @@ Usage :
 import numpy as np
 import matplotlib.pyplot as plt
 import timeit
+import scipy
 
 # ── Import des modules d'intégration ──────────────────────────────────────────
 # NOTE : les modules integration_rectangles.py et integration_trapezes.py
